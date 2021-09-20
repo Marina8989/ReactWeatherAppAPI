@@ -3,11 +3,3 @@
     padding: 0;
     box-sizing: border-box;
 }
-body{
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: lightgreen;
-    background: purple url("https://cdn.wallpapersafari.com/25/62/b6qNPD.jpg") center/cover;
-}
