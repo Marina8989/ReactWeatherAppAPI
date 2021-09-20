@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
 
 const StyledDiv = styled.div`
     background: linear-gradient(
@@ -29,11 +30,58 @@ const Input = styled.input`
      font-size: 1rem;
 `
 
+const API_KEY = 'cf0935aed5ebe289554f82291e75803f';
+
 class Home extends React.Component {
+    state={
+        isLoading: false,
+        hasError: false,
+        location: null,
+        inputValue: ''
+    }
+     
+    getLocation = async (city) => {
+        this.setState({isLoading: true});
+        try{
+            const {data} = await axios(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`);
+            console.log(data);
+            this.setState({location: data, isLoading: false});
+            console.log(this.state.location)
+        }catch(err) {
+          this.setState({hasError: true});
+        }
+    }
+    handleChange = (e) => {
+       this.setState({location: e.target.value});
+    }
+
+    handleSubmit = (e) => {
+       e.preventDefault();
+       console.log(this.state.location)
+       this.setState({location: ''})
+    }
+
+   componentDidMount() {
+      
+   }
+     
     render() {
        return(
         <StyledDiv className="card">
-            <Input placeholder="Enter city..." />
+            <form onSubmit={this.handleSubmit}>
+               <Input placeholder="Enter city..." value={this.state.location} onChange={this.handleChange}/>
+            </form>
+
+            {this.state.location && Object.keys(this.state.location).map(key => {
+                  return (
+                      <>
+                        <span>{key}</span>
+                        <span>{this.state.location[key]}</span>
+
+                        {this.state.hasError && <h3>Please try again...</h3>}
+                      </>
+                  )
+            })}
         </StyledDiv>
      )
     }
