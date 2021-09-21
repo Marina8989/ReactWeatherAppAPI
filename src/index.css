@@ -3,3 +3,21 @@
     padding: 0;
     box-sizing: border-box;
 }
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: lightgreen;
+  background: purple url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTz9iqQCA_MX2wO-z8p1FYBVvG37tco7IPEovtEsBIHuDUsZCos6q1_kAtOMQkaZij2Yo&usqp=CAU") center/cover;
+  overflow: hidden;
+  color: white;
+}
+.main, h1{
+    margin: auto;
+    text-align: center;
+}
+
+h1{
+    margin: 2rem 0;
+}
