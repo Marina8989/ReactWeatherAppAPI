@@ -1,13 +1,20 @@
 import React from 'react';
-import Weather from './Weather';
+import Search from './components/Search';
+import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 
 class App extends React.Component{
     render() {
         return(
-            <>
-              <h1>Weather App</h1>
-              <Weather />
-            </>
+            <Router>
+                <div>
+                    <Link to='/'>Home</Link>
+                </div>
+                <Switch>
+                   <Route path='/'>
+                       <Search />
+                   </Route>
+                </Switch>
+            </Router>
         )
     }
 }
