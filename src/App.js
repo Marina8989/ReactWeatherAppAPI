@@ -1,5 +1,5 @@
 import React from 'react';
-import Search from './components/Search';
+import City from './components/City';
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 
 class App extends React.Component{
@@ -7,11 +7,11 @@ class App extends React.Component{
         return(
             <Router>
                 <div>
-                    <Link to='/'>Home</Link>
+                    <Link to='/'>Home (Main Page)</Link>
                 </div>
                 <Switch>
                    <Route path='/'>
-                       <Search />
+                       <City />
                    </Route>
                 </Switch>
             </Router>
