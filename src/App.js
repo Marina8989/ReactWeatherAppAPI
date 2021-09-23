@@ -7,10 +7,14 @@ class App extends React.Component{
         return(
             <Router>
                 <div>
-                    <Link to='/'>Home (Main Page)</Link>
+                    <Link to='/'>Main Page</Link><br />
+                    <Link to='/components/City'>Cities</Link>
                 </div>
                 <Switch>
-                   <Route path='/'>
+                   <Route path='/' exact />
+                       
+                   
+                   <Route path='/components/City'>
                        <City />
                    </Route>
                 </Switch>

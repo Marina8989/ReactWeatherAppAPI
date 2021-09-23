@@ -36,8 +36,9 @@ class City extends React.Component{
     render(){
         return(
             <>
+            <h2>Weather App</h2>
              <Form handleSubmit={this.handleSubmit}/>
-             <List list={this.state.list} />
+             <List list={this.state.list} onClick={this.handleClick}/>
             </> 
         )
     }
