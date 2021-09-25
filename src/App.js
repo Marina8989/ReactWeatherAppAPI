@@ -6,18 +6,10 @@ class App extends React.Component{
     render() {
         return(
             <Router>
-                <div>
-                    <Link to='/'>Main Page</Link><br />
-                    <Link to='/components/City'>Cities</Link>
-                </div>
-                <Switch>
-                   <Route path='/' exact />
-                       
-                   
-                   <Route path='/components/City'>
-                       <City />
-                   </Route>
-                </Switch>
+              <City />
+            <Switch>
+              <Route path='/' exact />
+            </Switch>
             </Router>
         )
     }
