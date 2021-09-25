@@ -10,6 +10,7 @@ class App extends React.Component{
             <Switch>
               <Route path='/' exact />
             </Switch>
+            <Route path='/:city' component={Location}/>
             </Router>
         )
     }

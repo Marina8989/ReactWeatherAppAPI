@@ -1,6 +1,7 @@
 import React from 'react';
 import Form from './Form';
 import List from './List';
+import {Link} from 'react-router-dom';
 import axios from 'axios';
 
 class City extends React.Component{
@@ -17,16 +18,14 @@ class City extends React.Component{
        const newList = [...this.state.list, item];
        this.setState({list: newList});
     }
-    handleDelete = (item) => {
-        console.log('delete');
-    }
     
     render(){
         return(
             <>
               <h2>Weather App</h2>
+               <Link to='/'>Current Location</Link>
               <Form handleSubmit={this.handleSubmit}/>
-              <List list={this.state.list} handleDelete={this.handleDelete}/>
+              <List list={this.state.list} />
             </>  
         )
     }

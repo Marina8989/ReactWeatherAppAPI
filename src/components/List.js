@@ -1,15 +1,14 @@
 import React from 'react';
-import Button from './Button';
+import {Link} from 'react-router-dom';
 
 const List = (props) => {
     return(
         <>
-          {props.list.map(item => {
-              const {id, value} = item;
+          {props.list.map(city => {
+              const {id, value} = city;
               return(
-                  <div key={id} style={{display: 'flex'}}>
-                    <h4>{value}</h4>
-                    <Button handleDelete={props.handleDelete}/>
+                  <div key={id} style={{display: 'flex', padding: '15px'}}>
+                    <Link to={`/${value}`}>{value}</Link>
                   </div>
               )
           })}
