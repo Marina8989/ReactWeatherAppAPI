@@ -37,7 +37,7 @@ class Cities extends React.Component{
               <form onSubmit={(e) => this.handleSubmit(e, this.state.inputValue)}>
                   <input value={this.state.inputValue} onChange={this.handleChange} style={{border: '1px solid green'}}/>
               </form><br />
-              <Link to='/'>Current Location</Link>
+              <Link to='/'>Home</Link>
                
              <div style={{display: 'flex'}}>
                 {this.state.list.map((city) => {
